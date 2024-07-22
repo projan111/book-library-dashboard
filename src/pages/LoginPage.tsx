@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import {
   Card,
@@ -11,10 +11,24 @@ import {
 import { Input } from "../components/ui/input";
 import { Label } from "../components/ui/label";
 import { useRef } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { login } from "../http/api";
 
 const LoginPage = () => {
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+
+  const navigate = useNavigate();
+
+  const mutation = useMutation({
+    mutationFn: login,
+    onSuccess: () => {
+      // Invalidate and refetch
+      console.log("Login Successful!");
+      // QueryClient.invalidateQueries({ queryKey: ["login"] });
+      navigate("/dashboard/home");
+    },
+  });
 
   const handleLoginSubmit = () => {
     const email = emailRef.current?.value;
@@ -22,6 +36,11 @@ const LoginPage = () => {
 
     console.log(email, password);
     //make server call
+    if (!email || !password) {
+      return alert("Please enter email and password");
+    }
+
+    mutation.mutate({ email, password });
   };
 
   return (
@@ -40,7 +59,7 @@ const LoginPage = () => {
               ref={emailRef}
               id="email"
               type="email"
-              placeholder="m@example.com"
+              placeholder="me@example.com"
               required
             />
           </div>
