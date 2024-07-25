@@ -2,8 +2,6 @@ import {
   Badge,
   Bell,
   Book,
-  BookAIcon,
-  CircleUser,
   Home,
   LineChart,
   Menu,
@@ -11,9 +9,7 @@ import {
   Package2,
   Search,
   ShoppingCart,
-  User,
   User2,
-  UserCog2,
   Users,
 } from "lucide-react";
 import { Link, Outlet } from "react-router-dom";
