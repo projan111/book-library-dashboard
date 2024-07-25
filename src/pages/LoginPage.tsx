@@ -23,9 +23,7 @@ const LoginPage = () => {
   const mutation = useMutation({
     mutationFn: login,
     onSuccess: () => {
-      // Invalidate and refetch
       console.log("Login Successful!");
-      // QueryClient.invalidateQueries({ queryKey: ["login"] });
       navigate("/dashboard/home");
     },
   });
