@@ -28,9 +28,9 @@ const RegisterPage = () => {
   const mutation = useMutation({
     mutationFn: register,
     onSuccess: (response) => {
-      console.log("Login Successful!");
+      console.log("User Registered Successfully!");
       setToken(response.data.accessToken);
-      navigate("/dashboard/home");
+      navigate("/auth/login");
     },
   });
 
@@ -39,7 +39,7 @@ const RegisterPage = () => {
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
 
-    console.log(email, password);
+    console.log(name, email, password);
     //make server call
     if (!name || !email || !password) {
       return alert("Please enter email and password");

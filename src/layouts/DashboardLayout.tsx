@@ -31,7 +31,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "../components/ui/dropdown-menu";
-import logo from "../assets/lifebook.png"
+import logo from "../assets/lifebook.png";
 
 const DashboardLayout = () => {
   return (
@@ -67,12 +67,14 @@ const DashboardLayout = () => {
               <CardHeader className="p-2 pt-0 md:p-4">
                 <CardTitle>Upgrade to Pro</CardTitle>
                 <CardDescription>
-                  Unlock all features and get unlimited access to our support
-                  team.
+                  Unlock all features and get unlimited book access.
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-2 pt-0 md:p-4 md:pt-0">
-                <Button size="sm" className="w-full">
+                <Button
+                  size="sm"
+                  className="w-full bg-[#d7980e] hover:bg-[#ad8122]"
+                >
                   Upgrade
                 </Button>
               </CardContent>
@@ -146,13 +148,12 @@ const DashboardLayout = () => {
                   <CardHeader>
                     <CardTitle>Upgrade to Pro</CardTitle>
                     <CardDescription>
-                      Unlock all features and get unlimited access to our
-                      support team.
+                      Unlock all features and get unlimited book access.
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
-                    <Button size="sm" className="w-full">
-                      Upgrade
+                    <Button size="sm" className="w-full ">
+                      Upgrade to pro
                     </Button>
                   </CardContent>
                 </Card>
