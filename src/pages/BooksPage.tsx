@@ -1,4 +1,4 @@
-import { Mutation, useMutation, useQuery } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 import { getBooks } from "../http/api";
 import {
   Breadcrumb,
@@ -33,7 +33,7 @@ import {
   DropdownMenuTrigger,
 } from "../components/ui/dropdown-menu";
 import { Button } from "../components/ui/button";
-import { ArrowDownToDot, CirclePlus, MoreHorizontal, Plus } from "lucide-react";
+import { CirclePlus, MoreHorizontal } from "lucide-react";
 import { Book } from "../types";
 
 const BooksPage = () => {
