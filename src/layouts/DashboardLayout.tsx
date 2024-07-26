@@ -2,8 +2,8 @@ import {
   Badge,
   Bell,
   Book,
+  Copyright,
   Home,
-  LineChart,
   LogOut,
   Menu,
   Package,
@@ -11,7 +11,6 @@ import {
   Search,
   ShoppingCart,
   User2,
-  Users,
 } from "lucide-react";
 import { Link, Outlet, Navigate } from "react-router-dom";
 import { Button } from "../components/ui/button";
@@ -34,6 +33,7 @@ import {
 } from "../components/ui/dropdown-menu";
 import logo from "../assets/lifebook.png";
 import useTokenStore from "../store";
+import webxLogo from "../assets/webxLogo.png";
 
 const DashboardLayout = () => {
   const { token, setToken } = useTokenStore((state) => state);
@@ -76,7 +76,7 @@ const DashboardLayout = () => {
             </nav>
           </div>
           <div className="mt-auto p-4">
-            <Card x-chunk="dashboard-02-chunk-0">
+            <Card x-chunk="dashboard-02-chunk-0" className="border-green-400 border">
               <CardHeader className="p-2 pt-0 md:p-4">
                 <CardTitle>Upgrade to Pro 🌟</CardTitle>
                 <CardDescription>
@@ -213,6 +213,24 @@ const DashboardLayout = () => {
         </header>
         <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
           <Outlet />
+
+          <div className=" mx-auto flex flex-col items-center gap-1">
+            <div className=" flex items-center gap-1 text-zinc-400">
+              <Copyright size={16} />
+              <span className="font-semibold ">
+                Copyright 2024 | All Rights Reserved
+              </span>
+            </div>
+            <span className="text-green-400">Designed and Developed By</span>
+            <Link to={"https://webxnep.com"} target="__blank">
+              <img
+                src={webxLogo}
+                width={60}
+                alt="creative website designing company in nepal"
+                className="hover:scale-125 transition-all duration-100"
+              />
+            </Link>
+          </div>
         </main>
       </div>
     </div>

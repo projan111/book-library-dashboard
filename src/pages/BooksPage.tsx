@@ -61,7 +61,7 @@ const BooksPage = () => {
         <Link to={"/dashboard/books/create"}>
           <Button
             variant={"secondary"}
-            className="flex items-center gap-2 justify-center bg-green-400 hover:bg-green-500"
+            className="flex items-center gap-2 justify-center bg-[#70d413] hover:bg-[#65af20]"
           >
             <CirclePlus size={16} />
             <span>Add book</span>
