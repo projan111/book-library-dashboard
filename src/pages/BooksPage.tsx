@@ -35,6 +35,7 @@ import {
 import { Button } from "../components/ui/button";
 import { CirclePlus, MoreHorizontal } from "lucide-react";
 import { Book } from "../types";
+import { Link } from "react-router-dom";
 
 const BooksPage = () => {
   const { data, isLoading, isError } = useQuery({
@@ -57,13 +58,15 @@ const BooksPage = () => {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <Button
-          variant={"secondary"}
-          className="flex items-center gap-2 justify-center bg-green-400 hover:bg-green-500"
-        >
-          <CirclePlus size={16} />
-          <span>Add book</span>
-        </Button>
+        <Link to={"/dashboard/books/create"}>
+          <Button
+            variant={"secondary"}
+            className="flex items-center gap-2 justify-center bg-green-400 hover:bg-green-500"
+          >
+            <CirclePlus size={16} />
+            <span>Add book</span>
+          </Button>
+        </Link>
       </div>
       {/* // Table starts from here // */}
       <Card className="mt-6">
