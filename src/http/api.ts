@@ -11,3 +11,4 @@ const api = axios.create(
 
 export const login = async (data: {email:string; password:string}) => api.post('api/user/login', data)
 export const register = async (data: {name:string, email:string; password:string}) => api.post('api/user/register', data)
+export const getBooks = async () => api.get('api/books');
