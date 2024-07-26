@@ -4,6 +4,7 @@ import {
   Book,
   Home,
   LineChart,
+  LogOut,
   Menu,
   Package,
   Package2,
@@ -35,11 +36,16 @@ import logo from "../assets/lifebook.png";
 import useTokenStore from "../store";
 
 const DashboardLayout = () => {
-  const token = useTokenStore((state) => state.token);
+  const { token, setToken } = useTokenStore((state) => state);
 
   if (token === "") {
     return <Navigate to={"/auth/login"} replace />;
   }
+
+  const logout = () => {
+    console.log("logged out");
+    setToken("");
+  };
 
   return (
     <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-green-50">
@@ -206,7 +212,16 @@ const DashboardLayout = () => {
               <DropdownMenuItem>Settings</DropdownMenuItem>
               <DropdownMenuItem>Support</DropdownMenuItem>
               <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
+              <DropdownMenuItem>
+                <Button
+                  onClick={logout}
+                  variant={"link"}
+                  className="hover:text-red-500 flex items-center gap-3 hover:no-underline"
+                >
+                  <LogOut size={16} />
+                  <span>Logout</span>
+                </Button>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </header>
