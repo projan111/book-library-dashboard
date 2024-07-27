@@ -48,7 +48,7 @@ const DashboardLayout = () => {
   };
 
   return (
-    <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-green-50">
+    <div className=" grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr] bg-green-50">
       <div className="hidden border-r bg-muted/40 md:block">
         <div className="flex h-full max-h-screen flex-col gap-2">
           <div className="flex h-14 items-center border-b px-4 lg:h-[60px] lg:px-6">
@@ -76,7 +76,10 @@ const DashboardLayout = () => {
             </nav>
           </div>
           <div className="mt-auto p-4">
-            <Card x-chunk="dashboard-02-chunk-0" className="border-green-400 border">
+            <Card
+              x-chunk="dashboard-02-chunk-0"
+              className="border-green-400 border"
+            >
               <CardHeader className="p-2 pt-0 md:p-4">
                 <CardTitle>Upgrade to Pro 🌟</CardTitle>
                 <CardDescription>
@@ -95,6 +98,7 @@ const DashboardLayout = () => {
           </div>
         </div>
       </div>
+      {/* Responsive Design Here  */}
       <div className="flex flex-col">
         <header className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-[60px] lg:px-6">
           <Sheet>
