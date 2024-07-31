@@ -1,4 +1,4 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";
 import RegisterPage from "./pages/RegisterPage";
@@ -6,11 +6,12 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import BooksPage from "./pages/BooksPage";
 import AuthLayout from "./layouts/AuthLayout";
 import CreateBooks from "./pages/CreateBooks";
+import ClientHomePage from "./frontend/ClientHomePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to={"/dashboard/home"} />,
+    element: <ClientHomePage />,
   },
   {
     path: "dashboard",
