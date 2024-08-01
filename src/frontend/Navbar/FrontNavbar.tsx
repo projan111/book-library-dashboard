@@ -1,4 +1,4 @@
-import { CircleUserRound } from "lucide-react";
+import { BellRing, ShoppingCart, UserRound } from "lucide-react";
 import logo from "../../assets/lifebook.png";
 import { Link } from "react-router-dom";
 
@@ -40,8 +40,21 @@ const FrontNavbar = () => {
           >
             Contact
           </Link>
-          <CircleUserRound color="#777" />
         </ul>
+        <div className="flex items-center gap-3">
+          <BellRing
+            size={20}
+            className=" text-zinc-600 hover:text-green-500 cursor-pointer"
+          />
+          <ShoppingCart
+            size={20}
+            className=" text-zinc-600 hover:text-green-500 cursor-pointer"
+          />
+          <UserRound
+            size={32}
+            className=" text-zinc-600 hover:text-green-500 cursor-pointer bg-green-100 border rounded-full p-1"
+          />
+        </div>
       </div>
     </nav>
   );

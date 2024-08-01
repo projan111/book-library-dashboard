@@ -11,6 +11,7 @@ interface Book {
   title: string;
   description: string;
   price: string;
+  mrp: string;
   author: string;
   genre: string;
   createdAt: string;
@@ -26,6 +27,7 @@ const books: Book[] = [
     title: "Reach Dad Poor Dad",
     description: "This book teaches you about how to get rich",
     price: "Rs 200",
+    mrp: "Rs 450",
     author: "L",
     genre: "Finance",
     createdAt: new Date().toISOString(),
@@ -35,6 +37,7 @@ const books: Book[] = [
     title: "Atomic Habit",
     description: "A book about to change your habit with your life",
     price: "Rs 300",
+    mrp: "Rs 650",
     author: "Rojan",
     genre: "Self-help",
     createdAt: new Date().toISOString(),
@@ -44,6 +47,7 @@ const books: Book[] = [
     title: "Ikigai",
     description: "This book will help you to find your passion",
     price: "Rs 500",
+    mrp: "Rs 800",
     author: "L",
     genre: "Self-help",
     createdAt: new Date().toISOString(),
@@ -53,6 +57,7 @@ const books: Book[] = [
     title: "Arab Blues",
     description: "This book teaches you about how to get rich",
     price: "Rs 700",
+    mrp: "Rs 1100",
     author: "Sigmund Frud",
     genre: "Psychology",
     createdAt: new Date().toISOString(),
@@ -62,6 +67,7 @@ const books: Book[] = [
     title: "Firfire",
     description: "This book teaches you about how to get rich",
     price: "Rs 400",
+    mrp: "Rs 900",
     author: "Achut",
     genre: "Finance",
     createdAt: new Date().toISOString(),
@@ -71,6 +77,7 @@ const books: Book[] = [
     title: "Pagal Basti",
     description: "This book teaches you about how to get rich",
     price: "Rs 900",
+    mrp: "Rs 1400",
     author: "Pagal",
     genre: "Finance",
     createdAt: new Date().toISOString(),
@@ -90,7 +97,7 @@ const TopCategories: React.FC<Props> = ({ mainTitle }) => {
             />
             <div>
               <h2 className="text-lg font-semibold">{book.title}</h2>
-              <div className="flex flex-col justify-between items-start py-2">
+              <div className="flex flex-col justify-between items-start py-2 gap-2">
                 <p className="text-zinc-700">
                   Author:{" "}
                   <span className="text-zinc-950 font-medium">
@@ -104,7 +111,12 @@ const TopCategories: React.FC<Props> = ({ mainTitle }) => {
                   </span>
                 </p>
               </div>
-              <p className="font-semibold text-xl">{book.price}</p>
+              <div className="flex items-center gap-3">
+                <p className="font-semibold text-xl line-through text-zinc-500">
+                  {book.mrp}
+                </p>
+                <p className="font-semibold text-xl">{book.price}</p>
+              </div>
               <p className="text-zinc-500 py-3">{book.description}</p>
               <div className="flex justify-between items-center">
                 <Button variant={"outline"} className=" hover:bg-green-200">
