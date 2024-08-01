@@ -1,5 +1,5 @@
 import banner from "../../assets/harry-potter.webp";
-import banner2 from "../../assets/cover.webp";
+import banner2 from "../../assets/Book-Banner2.jpg";
 import FeatureCategories from "../features/FeatureCategories";
 import TopCategories from "../top-categories/TopCategories";
 
