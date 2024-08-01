@@ -23,7 +23,8 @@ const HeroSection = () => {
         </div>
       </div>
       <FeatureCategories />
-      <TopCategories />
+      <TopCategories mainTitle={"Top Selling Books"} />
+      <TopCategories mainTitle={"Famous Author"} />
     </div>
   );
 };

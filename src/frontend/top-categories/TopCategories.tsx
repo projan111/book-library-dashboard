@@ -15,6 +15,11 @@ interface Book {
   genre: string;
   createdAt: string;
 }
+
+interface Props {
+  mainTitle: string;
+}
+
 const books: Book[] = [
   {
     image: book1,
@@ -71,10 +76,10 @@ const books: Book[] = [
     createdAt: new Date().toISOString(),
   },
 ];
-const TopCategories = () => {
+const TopCategories: React.FC<Props> = ({ mainTitle }) => {
   return (
     <>
-      <h1 className="text-xl font-bold">Top Categories</h1>
+      <h1 className="text-xl font-bold">{mainTitle}</h1>
       <div className="flex py-3 gap-2">
         {books.map((book, index) => (
           <div key={index} className="border p-2">
@@ -84,13 +89,27 @@ const TopCategories = () => {
               className="w-screen h-72 object-cover"
             />
             <div>
-              <h2>{book.title}</h2>
-              <p>{book.description}</p>
-              <p>{book.author}</p>
-              <p>{book.genre}</p>
+              <h2 className="text-lg font-semibold">{book.title}</h2>
+              <div className="flex justify-between">
+                <p className="text-zinc-700">
+                  Author:{" "}
+                  <span className="text-zinc-950 font-medium">
+                    {book.author}
+                  </span>
+                </p>
+                <p className="text-zinc-950 font-medium border rounded-full px-4 bg-green-50">
+                  {book.genre}
+                </p>
+              </div>
+              <p className="text-zinc-500 py-3">{book.description}</p>
               <div className="flex justify-between items-center">
                 <p className="font-semibold text-xl">{book.price}</p>
-                <Button variant={"outline"}>Buy now </Button>
+                <Button
+                  variant={"outline"}
+                  className="bg-green-50 hover:bg-green-600 hover:text-white"
+                >
+                  Buy now{" "}
+                </Button>
               </div>
             </div>
           </div>
