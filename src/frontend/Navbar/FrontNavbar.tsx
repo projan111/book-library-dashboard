@@ -1,5 +1,6 @@
 import { CircleUserRound } from "lucide-react";
 import logo from "../../assets/lifebook.png";
+import { Link } from "react-router-dom";
 
 const FrontNavbar = () => {
   return (
@@ -9,11 +10,36 @@ const FrontNavbar = () => {
           <img src={logo} alt="Life Book" width={130} />
         </div>
         <ul className="flex items-center gap-6 uppercase font-semibold text-sm">
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Books</li>
-          <li>Contact</li>
+          <Link
+            to={"/"}
+            className="text-green-500 scale-125 transition-all duration-100 cursor-pointer"
+          >
+            Home
+          </Link>
+          <Link
+            to={"/about"}
+            className="hover:text-green-500 hover:scale-125 transition-all duration-100 cursor-pointer"
+          >
+            About
+          </Link>
+          <Link
+            to={"/services"}
+            className="hover:text-green-500 hover:scale-125 transition-all duration-100 cursor-pointer"
+          >
+            Services
+          </Link>
+          <Link
+            to={"/books"}
+            className="hover:text-green-500 hover:scale-125 transition-all duration-100 cursor-pointer"
+          >
+            Books
+          </Link>
+          <Link
+            to={"/contact"}
+            className="hover:text-green-500 hover:scale-125 transition-all duration-100 cursor-pointer"
+          >
+            Contact
+          </Link>
           <CircleUserRound color="#777" />
         </ul>
       </div>

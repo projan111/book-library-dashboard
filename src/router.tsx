@@ -7,12 +7,20 @@ import BooksPage from "./pages/BooksPage";
 import AuthLayout from "./layouts/AuthLayout";
 import CreateBooks from "./pages/CreateBooks";
 import ClientHomePage from "./frontend/Main";
+import About from "./frontend/about/About";
+import Services from "./frontend/services/Services";
+import Books from "./frontend/books/Books";
+import Contact from "./frontend/contact/Contact";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <ClientHomePage />,
   },
+  { path: "/about", element: <About /> },
+  { path: "/services", element: <Services /> },
+  { path: "/books", element: <Books /> },
+  { path: "/contact", element: <Contact /> },
   {
     path: "dashboard",
     element: <DashboardLayout />,
