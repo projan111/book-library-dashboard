@@ -14,8 +14,8 @@ const Header = () => {
   }
   return (
     <header className="bg-green-200 py-1">
-      <div className="flex items-center justify-between w-11/12 mx-auto">
-        <div className="text-sm font-semibold">
+      <div className="flex items-center justify-between w-11/12 mx-auto cursor-pointer">
+        <div className="text-sm font-semibold ">
           <h1 className="">
             Every book is the path of your life || Limited offer!!!
           </h1>

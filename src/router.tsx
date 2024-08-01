@@ -6,7 +6,7 @@ import DashboardLayout from "./layouts/DashboardLayout";
 import BooksPage from "./pages/BooksPage";
 import AuthLayout from "./layouts/AuthLayout";
 import CreateBooks from "./pages/CreateBooks";
-import ClientHomePage from "./frontend/FrontHeroPage";
+import ClientHomePage from "./frontend/Main";
 
 const router = createBrowserRouter([
   {
