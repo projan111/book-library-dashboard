@@ -32,46 +32,46 @@ const books: Book[] = [
   },
   {
     image: book2,
-    title: "Reach Dad Poor Dad",
-    description: "This book teaches you about how to get rich",
-    price: "Rs 200",
-    author: "L",
-    genre: "Finance",
+    title: "Atomic Habit",
+    description: "A book about to change your habit with your life",
+    price: "Rs 300",
+    author: "Rojan",
+    genre: "Self-help",
     createdAt: new Date().toISOString(),
   },
   {
     image: book3,
-    title: "Reach Dad Poor Dad",
-    description: "This book teaches you about how to get rich",
-    price: "Rs 200",
+    title: "Ikigai",
+    description: "This book will help you to find your passion",
+    price: "Rs 500",
     author: "L",
-    genre: "Finance",
+    genre: "Self-help",
     createdAt: new Date().toISOString(),
   },
   {
     image: book4,
-    title: "Reach Dad Poor Dad",
+    title: "Arab Blues",
     description: "This book teaches you about how to get rich",
-    price: "Rs 200",
-    author: "L",
-    genre: "Finance",
+    price: "Rs 700",
+    author: "Sigmund Frud",
+    genre: "Psychology",
     createdAt: new Date().toISOString(),
   },
   {
     image: book5,
-    title: "Reach Dad Poor Dad",
+    title: "Firfire",
     description: "This book teaches you about how to get rich",
-    price: "Rs 200",
-    author: "L",
+    price: "Rs 400",
+    author: "Achut",
     genre: "Finance",
     createdAt: new Date().toISOString(),
   },
   {
     image: book6,
-    title: "Reach Dad Poor Dad",
+    title: "Pagal Basti",
     description: "This book teaches you about how to get rich",
-    price: "Rs 200",
-    author: "L",
+    price: "Rs 900",
+    author: "Pagal",
     genre: "Finance",
     createdAt: new Date().toISOString(),
   },
@@ -90,23 +90,29 @@ const TopCategories: React.FC<Props> = ({ mainTitle }) => {
             />
             <div>
               <h2 className="text-lg font-semibold">{book.title}</h2>
-              <div className="flex justify-between">
+              <div className="flex flex-col justify-between items-start py-2">
                 <p className="text-zinc-700">
                   Author:{" "}
                   <span className="text-zinc-950 font-medium">
                     {book.author}
                   </span>
                 </p>
-                <p className="text-zinc-950 font-medium border rounded-full px-4 bg-green-50">
-                  {book.genre}
+                <p className="text-zinc-950 ">
+                  Genre:{" "}
+                  <span className="font-medium border rounded-full px-4 bg-green-50">
+                    {book.genre}
+                  </span>
                 </p>
               </div>
+              <p className="font-semibold text-xl">{book.price}</p>
               <p className="text-zinc-500 py-3">{book.description}</p>
               <div className="flex justify-between items-center">
-                <p className="font-semibold text-xl">{book.price}</p>
+                <Button variant={"outline"} className=" hover:bg-green-200">
+                  Learn more{" "}
+                </Button>
                 <Button
                   variant={"outline"}
-                  className="bg-green-50 hover:bg-green-600 hover:text-white"
+                  className="bg-[#62B611] text-white hover:bg-[#55901e] hover:text-white"
                 >
                   Buy now{" "}
                 </Button>
