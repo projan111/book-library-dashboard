@@ -5,7 +5,7 @@ import Header from "./Navbar/Header";
 
 const Main = () => {
   return (
-    <div>
+    <div className="bg-green-50">
       <Header />
       <FrontNavbar />
       <HeroSection />

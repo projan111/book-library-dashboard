@@ -1,8 +1,14 @@
 import { BellRing, ShoppingCart, UserRound } from "lucide-react";
 import logo from "../../assets/lifebook.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const FrontNavbar = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (e: React.MouseEvent<HTMLElement>) => {
+    e.preventDefault();
+    navigate("/dashboard/home");
+  };
   return (
     <nav className="sticky top-0 bg-[#ffffffb6] backdrop-blur-xl border-b ">
       <div className="nav_container flex items-center justify-between w-11/12 mx-auto py-3">
@@ -53,6 +59,7 @@ const FrontNavbar = () => {
           <UserRound
             size={32}
             className=" text-zinc-600 hover:text-green-500 cursor-pointer bg-green-100 border rounded-full p-1"
+            onClick={handleNavigation}
           />
         </div>
       </div>
